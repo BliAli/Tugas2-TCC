@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel panel-form">
+        <p class="eyebrow">Notes App</p>
+        <h1>Catat idemu sekarang.</h1>
+        <p class="subtitle">
+          Tuliskan Keluh Kesahmu ataupun anu mu iya adalah pokoknya.
+        </p>
+
+        <form id="noteForm" class="note-form">
+          <input type="hidden" id="noteId" />
+
+          <label for="judul">Judul</label>
+          <input
+            id="judul"
+            name="judul"
+            type="text"
+            placeholder="Contoh: Rencana Belajar"
+            required
+          />
+
+          <label for="isi">Isi Catatan</label>
+          <textarea
+            id="isi"
+            name="isi"
+            rows="5"
+            placeholder="Tulis catatanmu di sini..."
+            required
+          ></textarea>
+
+          <div class="actions">
+            <button type="submit" id="submitBtn">Simpan Catatan</button>
+            <button type="button" id="cancelEditBtn" class="ghost hidden">
+              Batal Edit
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel panel-list">
+        <div class="list-head">
+          <h2>Daftar Catatan</h2>
+          <button id="refreshBtn" class="ghost">Muat Ulang</button>
+        </div>
+        <p id="statusText" class="status"></p>
+
+        <div class="notes-layout">
+          <div id="notesContainer" class="notes-titles"></div>
+
+          <article id="noteDetail" class="note-detail empty-detail">
+            <h3 id="detailTitle">Pilih catatan</h3>
+            <p id="detailBody">
+              Klik salah satu judul catatan untuk melihat detail isi catatan.
+            </p>
+            <p id="detailMeta" class="note-meta"></p>
+            <div class="note-actions">
+              <button id="detailEditBtn" class="edit hidden">Edit</button>
+              <button id="detailDeleteBtn" class="delete hidden">Hapus</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
