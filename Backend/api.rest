@@ -1,0 +1,37 @@
+# API Testing
+GET http://localhost:3000/ HTTP/1.1
+
+###
+# GET : All Notes
+GET http://localhost:3000/api/v1/notes HTTP/1.1
+Content-Type: application/json
+
+###
+# GET : Note by ID
+GET http://localhost:3000/api/v1/notes/4 HTTP/1.1
+Content-Type: application/json
+
+###
+# POST : Create Note
+POST http://localhost:3000/api/v1/notes HTTP/1.1
+Content-Type: application/json
+
+{
+  "judul": "Tes Api",
+  "isi": "Tes Api Notes App"
+}
+
+###
+# PUT : Update Note
+PUT http://localhost:3000/api/v1/notes/7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "judul": "Tes Api (Update)",
+  "isi": "Tes Api Notes App (Update)"
+}
+
+###
+# DELETE : Delete Note
+DELETE http://localhost:3000/api/v1/notes/7 HTTP/1.1
+Content-Type: application/json
